@@ -7,7 +7,7 @@ title: Hexo
 subtitle:
 description:
 author: John Doe
-language:
+language: en
 timezone:
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: melody
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -80,3 +80,11 @@ deploy:
  type: git
  repo: https://github.com/crystalynliu/crystalynliu.github.io
  branch: master
+
+stylus:
+  compress: true
+  sourcemaps:
+    comment: true
+    inline: true
+    sourceRoot: ''
+    basePath: .
