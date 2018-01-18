@@ -6,7 +6,7 @@
 title: Hexo
 subtitle:
 description:
-author: John Doe
+author: Xinqian Liu
 language: en
 timezone:
 
@@ -74,13 +74,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: melody
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
- type: git
- repo: https://github.com/crystalynliu/crystalynliu.github.io
- branch: master
-
 stylus:
   compress: true
   sourcemaps:
@@ -88,3 +81,11 @@ stylus:
     inline: true
     sourceRoot: ''
     basePath: .
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+ type: git
+ repo: https://github.com/crystalynliu/crystalynliu.github.io
+ branch: master
+
