@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: ☁️上の小日子
+subtitle: 闲看庭前花开花落，漫随天外云卷云舒
+description: 
 author: Xinqian Liu
 language: en
 timezone:
@@ -61,7 +61,7 @@ tag_map:
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: ll
 time_format: HH:mm:ss
 
 # Pagination
