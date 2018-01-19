@@ -5,6 +5,11 @@
   "hexo": {
     "version": "3.4.4"
   },
+  "scripts": {
+    "serve": "node ./node_modules/hexo/bin/hexo generate && node ./node_modules/hexo/bin/hexo server",
+    "deploy": "node ./node_modules/hexo/bin/hexo generate && node ./node_modules/hexo/bin/hexo deploy",
+    "clean": "node ./node_modules/hexo/bin/hexo deploy clean"
+  },
   "dependencies": {
     "hexo": "^3.4.4",
     "hexo-deployer-git": "^0.3.1",

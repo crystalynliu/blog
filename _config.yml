@@ -5,8 +5,8 @@
 # Site
 title: ☁️上の小日子
 subtitle: 闲看庭前花开花落，漫随天外云卷云舒
-description: 
-author: Xinqian Liu
+description: 用于记录我们的生活与工作
+author: LXQ & ZHHL
 language: en
 timezone:
 
@@ -88,4 +88,6 @@ deploy:
  type: git
  repo: https://github.com/crystalynliu/crystalynliu.github.io
  branch: master
+
+disqus_shortname: crystaynliu
 

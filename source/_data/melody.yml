@@ -30,7 +30,8 @@ highlight_theme: default
 # ---------------
 social:
   github: https://github.com/crystalynliu
-  weibo: http://weibo.com/mybluedreams
+  weibo: https://www.weibo.com/1362052552/profile?topnav=1&wvr=6&is_all=1
+  facebook-official: https://www.facebook.com/liu.xinqian
 
 # Algolia search
 # ---------------
@@ -141,9 +142,9 @@ addThis:
 # Comments System
 # ---------------
 disqus:
-  enable: false 
-  #shortname: 
-  #count: 
+  enable: true 
+  shortname: crystalynliu
+  count: true
 
 # laibili:
   # enable: false
