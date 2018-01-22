@@ -270,8 +270,7 @@ tags: [两个人, 旅行, 自由行]
 
 	* 你猜对了，这还是鹿。不过我想让你看的是它吐舌头啦。图中的女主角说不仔细看很像牛啊。嗯，
 
-		> “你对着‘牛’拍风景，拍风景的人对着‘牛’拍你。”——卞之琳，
-		> [《断章》](http://cul.qq.com/a/20151208/023013.htm)
+		> “你对着‘牛’拍风景，拍风景的人对着‘牛’拍你。” ——卞之琳，[《断章》](http://cul.qq.com/a/20151208/023013.htm)
 
 		![](http://upload-images.jianshu.io/upload_images/7062643-f7eb24e2aab0a142.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
