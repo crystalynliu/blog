@@ -622,7 +622,7 @@ needmoreshare2:
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster
-#bing_site_verification:
+bing_site_verification: CD3CED86A0AACB9918F2C1576AB1EC9F
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru
