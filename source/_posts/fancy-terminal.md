@@ -1,6 +1,6 @@
 ---
 
-title: 搭建 Colorful Terimal
+title: 搭建 Colorful Terminal
 date: 2019-07-23
 categories: laptop.env.setting
 tags: [macOS, terminal]
@@ -12,13 +12,13 @@ tags: [macOS, terminal]
 > 工欲善其事，必先利其器。
 
 首先需要做的就是让编码的工具使用率变得更高，更快以及更自动化。
-这里主要是记录如何配置 **彩色的Terimal**。
+这里主要是记录如何配置 **彩色的Terminal**。
 
 <!--more-->
 
 
 # [iTerm2](https://www.iterm2.com/)
-MacOS 自带的 terimal 是很正规的**白底黑字**， 对于我这种已经习惯**黑底白字**的码农来说是不友好的，并且没有更多颜色特性表现不同的特性。所以在第一时间知道 **iTerm2** 的时候就果断抛弃了 terimal，从此被打入冷宫:p
+MacOS 自带的 Terminal 是很正规的**白底黑字**， 对于我这种已经习惯**黑底白字**的码农来说是不友好的，并且没有更多颜色特性表现不同的特性。所以在第一时间知道 **iTerm2** 的时候就果断抛弃了 Terminal，从此被打入冷宫:p
 
 并且 iTerm2 拥有一些非常实用的 [特性](https://www.iterm2.com/features.html), 例如 `split panes`, `autocomplete`等。至于这些特性如果使用，需要大家自行摸索。
 
@@ -47,7 +47,7 @@ $ brew cask install iterm2
     
     `iTerm2` menu -> `Preferences` -> `Profiles` -> `General` 标签页中的 `Working Directory` 选择 `Reuse previous session's directory`
     
-现在，Termial 就可以退出舞台，后面所有使用命令行的时候就由 iTerm2 来替代了。    
+现在，Terminal 就可以退出舞台，后面所有使用命令行的时候就由 iTerm2 来替代了。    
 
 # [Oh My Zsh](https://ohmyz.sh/)
 
@@ -79,7 +79,7 @@ $ brew cask install iterm2
     ```
     ZSH_THEME="agnoster"
     ```
-3. 重新启动 terimal，你就会看到一个全新的 termial    
+3. 重新启动 Terminal，你就会看到一个全新的 Terminal    
 
     ![](/images/agnoster-theme.png)
 
@@ -106,7 +106,7 @@ rm -rf fonts
     
 #### 配色方案
 
-如果发现窗口的颜色不是像我一样是深蓝色，记得将 termial 的配色方案设置为 `Solarized Dark`。
+如果发现窗口的颜色不是像我一样是深蓝色，记得将 Terminal 的配色方案设置为 `Solarized Dark`。
 
 ![](/images/color-presets.png)
 
@@ -151,15 +151,15 @@ git 的插件是默认安装的，就是说当你安装了 **oh-my-zsh**，就�
 
 ### z
 
-在打开 termial 后， 你是怎么进入工作目录的？是 `cd xx/xx/xx...`, `^R` 还是通过使用alias？
+在打开 Terminal 后， 你是怎么进入工作目录的？是 `cd xx/xx/xx...`, `^R` 还是通过使用alias？
 
 **z** 的出现可以帮助你快速进入目录，例如在我的电脑上使用 `z cask` 命令就会进入`/usr/local/Caskroom` 目录。
 
-**z** 是 **oh-my-zsh** 默认安装，只需要更改配置，重新加载 termial。就可以使用了。  
+**z** 是 **oh-my-zsh** 默认安装，只需要更改配置，重新加载 Terminal。就可以使用了。  
 
 ### zsh-syntax-highlighting
 
-既然要做 colorful termianl, 那我们就要做到极致。**[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)** 是为 zsh 的 shell 命令提供高亮的功能，它可以在 zsh 提示符下键入 cammand 时高亮显示到 termianl，并且会在命令执行前进行检查，将错误的 cammand 高亮为红色。
+既然要做 colorful terminal, 那我们就要做到极致。**[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)** 是为 zsh 的 shell 命令提供高亮的功能，它可以在 zsh 提示符下键入 cammand 时高亮显示到 Terminal，并且会在命令执行前进行检查，将错误的 cammand 高亮为红色。
 
 怎么将插件安装到 **oh-my-zsh**，然后配置它呢?
 
@@ -177,7 +177,7 @@ git 的插件是默认安装的，就是说当你安装了 **oh-my-zsh**，就�
 
 # End
 
-写这篇文章的初衷，仅仅是因为我刚刚对我的 termial 进行了配置，害怕忘记。以为很快就可以的文章，也写了 4，5 个小时。在这个过程中会去找各种参考，会去配上各类官方链接，慢慢地它就变成了一篇给大家看的文章。
+写这篇文章的初衷，仅仅是因为我刚刚对我的 Terminal 进行了配置，害怕忘记。以为很快就可以的文章，也写了 4，5 个小时。在这个过程中会去找各种参考，会去配上各类官方链接，慢慢地它就变成了一篇给大家看的文章。
 
 # Reference
 - [Guide to setup Mac](https://github.com/macdao/ocds-guide-to-setting-up-mac)
