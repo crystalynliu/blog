@@ -1,6 +1,6 @@
 ---
 
-title: Flex，你听说过吗？
+title: Flex，的全面理解
 date: 2018-08-29
 categories: Tech.change.life
 tags: [technology, front-end, css]

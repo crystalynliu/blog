@@ -1,6 +1,6 @@
 ---
 
-title: 搭建 Colorful Terminal
+title: 搭建 Colorful Terminal (iTerm2 + oh-my-zsh)
 date: 2019-07-23
 categories: laptop.env.setting
 tags: [macOS, terminal]
@@ -12,7 +12,7 @@ tags: [macOS, terminal]
 > 工欲善其事，必先利其器。
 
 首先需要做的就是让编码的工具使用率变得更高，更快以及更自动化。
-这里主要是记录如何配置 **彩色的Terminal**。
+今天来谈谈怎么配置 Terminal。
 
 <!--more-->
 
