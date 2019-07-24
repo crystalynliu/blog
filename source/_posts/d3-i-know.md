@@ -2,8 +2,8 @@
 
 title: 我所知道的 D3.js
 date: 2019-01-09
-categories: Tech.change.life
-tags: [technology, front-end, D3.js]
+categories: Coding
+tags: [front-end, d3]
 
 ---
 

@@ -2,7 +2,7 @@
 
 title: 搭建 Colorful Terminal (iTerm2 + oh-my-zsh)
 date: 2019-07-23
-categories: laptop.env.setting
+categories: Setups
 tags: [macOS, terminal]
 
 ---

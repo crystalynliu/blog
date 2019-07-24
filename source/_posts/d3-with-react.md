@@ -2,8 +2,8 @@
 
 title: D3.js 如何在 React 生态系统存活
 date: 2019-01-12
-categories: Tech.change.life
-tags: [technology, front-end, D3.js]
+categories: Coding
+tags: [front-end, d3, react]
 
 ---
 

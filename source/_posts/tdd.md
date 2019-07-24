@@ -1,9 +1,9 @@
 ---
 
-title: 初识 TDD
+title: TDD入门者的认知
 date: 2019-04-21
-categories: Tech.change.life
-tags: [technology, methodology, TDD]
+categories: Methodology
+tags: [agile, tdd]
 
 ---
 

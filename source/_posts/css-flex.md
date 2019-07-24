@@ -2,8 +2,8 @@
 
 title: Flex，的全面理解
 date: 2018-08-29
-categories: Tech.change.life
-tags: [technology, front-end, css]
+categories: Coding
+tags: [front-end, css]
 
 ---
 
