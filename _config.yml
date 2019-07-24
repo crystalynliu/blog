@@ -94,3 +94,9 @@ symbols_count_time:
   time: false
   total_symbols: true
   total_time: false
+
+# 自动生成sitemap
+sitemap: 
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
