@@ -23,12 +23,10 @@
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.0",
-    "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.2.0",
     "hexo-symbols-count-time": "^0.4.4",
-    "hexo-wordcount": "^3.0.2",
-    "pug": "^2.0.0-rc.4"
+    "hexo-wordcount": "^3.0.2"
   }
 }

@@ -1,7 +1,6 @@
 ---
 
 title: 你用对方法学英语了吗？
-date: 2018-10-30
 categories: Methodology
 tags: [English]
 
