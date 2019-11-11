@@ -6,7 +6,7 @@
 title: 旅 • 學 • 技
 subtitle: Stay Hungry, Stay Foolish
 description: Keep recording travel, summary what I learned and share technology
-author: X™Qiღn
+author: XinQiღn™
 language: en
 timezone:
 
@@ -96,7 +96,7 @@ symbols_count_time:
   total_time: false
 
 # 自动生成sitemap
-sitemap: 
+sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
