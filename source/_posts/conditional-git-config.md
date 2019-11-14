@@ -7,7 +7,8 @@ tags:
 date: 2019-11-11 18:07:39
 ---
 
-如果你是一个 Git 重度依赖患者，这篇文章就是让你避免提交错误的 email 给某个 repo 的 commit, 让我们彻底区分开工作与生活的 email。
+如果你是一个 Git 重度依赖患者，这篇文章会告诉你如何避免提交错误的 email 给某个 repo 的 commit。
+让我们彻底区分开工作与生活。
 
 > No more accidentally committing with the wrong email in a new repository
 
