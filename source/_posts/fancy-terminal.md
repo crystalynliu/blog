@@ -36,18 +36,18 @@ $ brew cask install iterm2
 讲两个我很常用的设置
 
 * **透明度(transparency)**
-    
+
     我们在使用 iterm2 的时候可能会需要按照搜索或者笔记的内容去写 command, 那如果有一定的透明度，我们就不用害怕屏幕不够大啦。
-    
+
     `iTerm2` menu -> `Preferences` -> `Profiles` -> `Window` 标签页 找到 `Transparency` 就可以设置透明度了。
 
 * **工作目录(working directory)**
 
     在 iTerm2 中打开新的 pane 和 tab 时， 默认情况下总是 `Home` 目录，之后还需要使用命令进入工作目录。所以我们可以设置 iTerm2 在每次打开新窗口的时候就自动进入你当前正在工作的目录。
-    
+
     `iTerm2` menu -> `Preferences` -> `Profiles` -> `General` 标签页中的 `Working Directory` 选择 `Reuse previous session's directory`
-    
-现在，Terminal 就可以退出舞台，后面所有使用命令行的时候就由 iTerm2 来替代了。    
+
+现在，Terminal 就可以退出舞台，后面所有使用命令行的时候就由 iTerm2 来替代了。
 
 # [Oh My Zsh](https://ohmyz.sh/)
 
@@ -56,16 +56,16 @@ $ brew cask install iterm2
 ## How to install
 
 * via curl
-    
+
     ```bash
     $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     ```
 
 * via wget
-    
+
     ```bash
     $ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-    
+
     ```
 
 ## Settings
@@ -79,15 +79,15 @@ $ brew cask install iterm2
     ```
     ZSH_THEME="agnoster"
     ```
-3. 重新启动 Terminal，你就会看到一个全新的 Terminal    
+3. 重新启动 Terminal，你就会看到一个全新的 Terminal
 
     ![](/images/agnoster-theme.png)
 
 
 #### [Powerline Fonts](https://github.com/powerline/fonts)
-    
+
 如果发现酷酷的分支图标都变成了问号，那是因为大多数的主题都需要安装 Powerline Fonts。你可以使用下面的命令快速安装
-    
+
 ```bash
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -103,7 +103,7 @@ rm -rf fonts
 之后通过修改 font 参数就可以使用 Powerline fonts 了。
 
 ![](/images/font-setting.jpg)
-    
+
 #### 配色方案
 
 如果发现窗口的颜色不是像我一样是深蓝色，记得将 Terminal 的配色方案设置为 `Solarized Dark`。
@@ -155,7 +155,7 @@ git 的插件是默认安装的，就是说当你安装了 **oh-my-zsh**，就�
 
 **z** 的出现可以帮助你快速进入目录，例如在我的电脑上使用 `z cask` 命令就会进入`/usr/local/Caskroom` 目录。
 
-**z** 是 **oh-my-zsh** 默认安装，只需要更改配置，重新加载 Terminal。就可以使用了。  
+**z** 是 **oh-my-zsh** 默认安装，只需要更改配置，重新加载 Terminal。就可以使用了。
 
 ### zsh-syntax-highlighting
 
@@ -174,6 +174,29 @@ git 的插件是默认安装的，就是说当你安装了 **oh-my-zsh**，就�
     ```bash
     plugins=( [plugins...] zsh-syntax-highlighting)
     ```
+### zsh-autosuggestion
+
+还有一个非常有用的插件推荐给大家。Auto Suggestion, 当你输入命令的时候，你可以看到光标有一个浅灰色的命令可以用以补全。这个命令是你最近使用过的命令。
+
+怎么安装到 **oh-may-zsh**?
+
+* 将插件的 repo 拷贝到 **oh-my-zsh** 的插件目录下
+
+    ```bash
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    ```
+
+* 在 `~/.zshrc` 激活 plugin
+
+    ```bash
+    plugins=( [plugins...] zsh-autosuggestions)
+    ```
+
+**Notes:** 如果你在使用 iTerm2 的时候发现不能正常显示灰色的命令，而是变成跟 terminal 窗口一个颜色, 这是一个已知问题，是由于颜色错误引起的，详细内容可以参考[文档](https://github.com/zsh-users/zsh-autosuggestions#suggestion-highlight-style)。
+
+简单来说就是将下图中的 `Basic Colors > Background` 颜色和 `ANSI Colors > Black > Bright` 设置成不一样的颜色即可。
+
+![](/images/auto-suggestion-issue.png)
 
 # End
 
