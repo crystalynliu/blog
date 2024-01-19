@@ -8,8 +8,8 @@
   "scripts": {
     "generate": "hexo generate",
     "serve": "hexo generate && hexo server -p 3033",
-    "deploy": "hexo generate && hexo deploy clean",
     "clean": "hexo clean",
+    "deploy": "yarn clean && yarn generate && hexo deploy",
     "create-draft": "hexo new draft",
     "publish": "hexo publish post"
   },
