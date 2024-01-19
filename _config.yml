@@ -86,7 +86,7 @@ stylus:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
  type: git
- repo: https://github.com/crystalynliu/xinqian.github.io
+ repo: git@github.com:crystalynliu/xinqian.github.io.git
  branch: master
 
 symbols_count_time:
