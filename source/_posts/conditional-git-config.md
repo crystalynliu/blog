@@ -2,7 +2,7 @@
 title: 使用有条件的 .gitconfig
 categories: Setups
 tags:
-  - Git
+  - git
   - configuration
 date: 2019-11-11 18:07:39
 ---

@@ -11,7 +11,7 @@
     "clean": "hexo clean",
     "deploy": "yarn clean && yarn generate && hexo deploy",
     "create-draft": "hexo new draft",
-    "publish": "hexo publish post"
+    "publish-post": "hexo publish post"
   },
   "dependencies": {
     "hexo": "^7.1.0",
