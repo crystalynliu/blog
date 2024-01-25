@@ -8,15 +8,23 @@ tags:
   - configuration
 ---
 
-git 和 github 目前是我工作生涯中用的最多的工具。不管是我的编程学习亦或者是我的工作，都需要本地使用 git 来 commit 代码的修改，并把 github 作为 remote 仓库, 将代码的修存储下来。我将会记录下我在使用他们的过程中做过的配置帮我解决了哪些问题。
+我是一个喜欢公私分明的人，不喜欢使用我的私人账号提交代码到公司的 github, 包括不喜欢泄漏我的私人邮箱（关于如何针对不同的文件夹配置不同的 gitconfig, 可以自行查看[使用有条件的 .gitconfig](./conditional-git-config.md)).
+
+对于这种情况，我希望有两个或者多个 github 账号，分别用来提交代码到不同的 github 仓库。那么问题来了，作为长期在 github 开发的重度患者，怎么样才能轻松在不同的项目之间无缝切换账户进行身份验证呢？
 
 <!--more-->
 
 # WHY
 
-我是一个喜欢公私分明的人，不喜欢使用我的私人账号提交代码到公司的 github, 包括不喜欢泄漏我的私人邮箱（关于如何针对不同的文件夹配置不同的 gitconfig, 可以自行查看[使用有条件的 .gitconfig](./conditional-git-config.md)).
+先来了解一下，在什么情况下，我们需要配置多个 **SSH（Secure Shell Protocol）key**:
 
-对于这种情况，我希望有两个或者多个 github 账号，分别用来提交代码到不同的 github 仓库。那么问题来了，作为长期在 github 开发的重度患者， 为了使用方便快捷（不希望经常输入用户名密码），非常依赖 **SSH（Secure Shell Protocol）key** 作为提交代码到 github.com 的重要凭证。
+1. **多个 GitHub 账户：**
+   如果你有多个 GitHub 账户，例如一个用于个人项目，另一个用于工作项目，那么每个账户可能需要不同的 SSH 密钥。
+
+2. **访问多个 Git 仓库提供商：**
+   如果你同时使用 GitHub、GitLab 或 Bitbucket 等不同的 Git 仓库提供商，每个提供商可能需要使用不同的 SSH 密钥。
+
+通过配置多个 SSH 密钥，你可以轻松地在不同的上下文中切换，确保每个项目或账户都能正确地进行身份验证，而不会产生冲突。
 
 # WHAT
 
@@ -33,47 +41,56 @@ git 和 github 目前是我工作生涯中用的最多的工具。不管是我�
 
 ## 配置 SSH config
 
-1. 在生成 SSH key 的时候，给一个特定的名字给保存 SSH 密钥的文件，例如：`id_xxxx_1`，一般这个文件会存储在 `/Users/<YOU>/.ssh` 文件夹。
-2. 经过第一步，如果你要针对两个 github 账户设置 SSH, 现在 `.ssh` 文件夹里应该会有**两对**密钥文件(分别是公钥和私钥)：
+1. 在生成 SSH key 的时候，指定一个 SSH 密钥文件名，例如：`id_xxxx_1`
 
-   ```
-   id_xxxx_1.pub
-   id_xxxx_1
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/id_xxxx_1
    ```
 
+   完成命令的 step 之后会生成两个文件：私钥 `id_xxxx_1` 和 公钥`id_xxxx_1.pub`
+
+2. 将私钥添加到 SSH 代理:
+
+   ```bash
+   ssh-add ~/.ssh/id_xxxx_1
    ```
-   id_xxxx_2.pub
-   id_xxxx_2
-   ```
+
+3. 将新生成的 SSH 密钥添加到 GitHub 账户：
+
+   将公钥 `~/.ssh/id_xxxx_1.pub` 内容添加到 GitHub 账户的 SSH 密钥设置中。
 
    > 如何将对应的 ssh key 添加到对应的 github 账号，可以查看[官方文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account), 这里就不再复述。
 
-3. 之后就需要在你的本地做 ssh config 配置，输入命令
+4. 创建或编辑 SSH 配置文件：
 
-   ```
-   cat ~/.ssh/config
-   ```
-
-   找到`~/.ssh/config`文件，并查看内容。如果没有的话，创建一个新文件，放置在 user 目录下的 `.ssh` 文件夹下面，根据下面的例子进行配置
-
-   ```
-   Host github-1
-   	HostName github.com
-   	Port 22
-   	AddKeysToAgent yes
-   	IdentityFile ~/.ssh/id_xxxx_1
-
-   Host github-2
-   	HostName github.com
-   	Port 22
-   	AddKeysToAgent yes
-   	IdentityFile ~/.ssh/id_xxxx_2
+   ```bash
+   nano ~/.ssh/config
    ```
 
-4. 设置完成之后，可以使用以下命令测试一下配置是否生效
+   在配置文件中添加以下内容，为每个 GitHub 主机指定使用的密钥：
 
    ```
-   > ssh -T github-1
+   # 默认密钥
+   Host github.com
+		HostName github.com
+		Port 22
+		AddKeysToAgent yes
+		IdentityFile ~/.ssh/id_rsa
+
+   # 新密钥
+   Host github-xxxx-1
+		HostName github.com
+		Port 22
+		AddKeysToAgent yes
+		IdentityFile ~/.ssh/id_xxxx1
+   ```
+
+	请确保 `Host` 后面的名称与 `git remote` 中的主机名相匹配。
+
+5. 测试 SSH 连接是否正常
+
+   ```
+   > ssh -T github-xxxx-1
    ```
 
    如果测试链接通过，会收到下面这条消息
@@ -83,7 +100,7 @@ git 和 github 目前是我工作生涯中用的最多的工具。不管是我�
    > provide shell access.
    ```
 
-   如果出现错误的情况，可以查阅 [SSH 故障排除文档](https://docs.github.com/zh/authentication/troubleshooting-ssh/error-permission-denied-publickey).
+   > 如果出现错误的情况，可以查阅 [SSH 故障排除文档](https://docs.github.com/zh/authentication/troubleshooting-ssh/error-permission-denied-publickey).
 
 ## SSH Config 常用参数配置
 
@@ -132,22 +149,18 @@ git 和 github 目前是我工作生涯中用的最多的工具。不管是我�
 - 怎么改造让旧仓库使用新的 SSH key 推送代码？
 - clone 仓库的时候发现，ssh 的 link 都是 `git@github.com` 开头, 那怎么应用到不同的 SSH Host 上呢？
 
-为了解决上面的问题，我们需要将仓库的 remote url 修改一下，例如从 github 复制的 url, 如下:
+为了解决上面的问题，我们需要通过修改remote url指定不同的主机名来使用不同的密钥。
 
-```
-git@github.com:xxxx_1/repo.git
-```
-
-需要修改成：
-
-```
-git@github-1:xxxx_1/repo.git
+```bash
+git clone git@github.com:yourusername/yourrepo.git   # 使用默认密钥
+git clone git@github-xxxx-1:yourusername/yourrepo.git  # 使用新密钥
 ```
 
-`github-1` 是配置在 SSH config 里的 Host。如此这般，就不会出现 SSH key 推送混淆的问题了。
+`github-xxxx-1` 是配置在 SSH config 里的 Host。如此这般，就不会出现 SSH key 推送混淆的问题了。
 
 # Reference
 
 - [github 官方文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh)
 - [一台电脑存放多个 git 账户的多个 rsa 秘钥](https://www.cnblogs.com/qingguo/p/5686247.html)
 - [SSH Config 那些你所知道和不知道的事](https://deepzz.com/post/how-to-setup-ssh-config.html)
+- [ChatGPT](https://chat.openai.com/)
